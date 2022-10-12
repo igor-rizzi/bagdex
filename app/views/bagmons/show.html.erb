@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bagmon.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @bagmon.type.description %>
+</p>
+
+<%= link_to 'Edit', edit_bagmon_path(@bagmon) %> |
+<%= link_to 'Back', bagmons_path %>
