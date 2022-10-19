@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @type.description %>
+  <strong>Name:</strong>
+  <%= @type.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @type.color %>
 </p>
 
 <%= link_to 'Edit', edit_type_path(@type) %> |

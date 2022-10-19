@@ -2,27 +2,20 @@
 
 <h1>Bagmons</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @bagmons.each do |bagmon| %>
-      <tr>
-        <td><%= bagmon.name %></td>
-        <td><%= bagmon.type_id %></td>
-        <td><%= link_to 'Show', bagmon %></td>
-        <td><%= link_to 'Edit', edit_bagmon_path(bagmon) %></td>
-        <td><%= link_to 'Destroy', bagmon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div style='display: flex; flex-wrap: wrap; width: 100%; gap: 1rem; justify-content: space-between;'>
+  <% @bagmons.each do |bagmon| %>
+    <a style='text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
+      <div style=' color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;'>
+        <h2><%= bagmon.name %></h2>
+        <div style='width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;'>
+          <%= image_tag bagmon.image, size: "250x250" %>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>
 
 <br>
 

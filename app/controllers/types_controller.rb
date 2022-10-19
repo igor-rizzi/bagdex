@@ -1,4 +1,4 @@
-class TypesController < ApplicationController
+class TypesController < UsersBackofficeController
   before_action :set_type, only: %i[ show edit update destroy ]
 
   # GET /types or /types.json
@@ -65,6 +65,6 @@ class TypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def type_params
-      params.require(:type).permit(:description)
+      params.require(:type).permit(:name, :color)
     end
 end
