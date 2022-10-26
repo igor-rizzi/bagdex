@@ -1,22 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bagmons</h1>
-
-
-
-<div style='display: flex; flex-wrap: wrap; width: 100%; gap: 1rem; justify-content: space-between;'>
-  <% @bagmons.each do |bagmon| %>
-    <a style='text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
-      <div style=' color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;'>
-        <h2><%= bagmon.name %></h2>
-        <div style='width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;'>
-          <%= image_tag bagmon.image, size: "250x250" %>
+<div class="container">
+  
+  <div style='display: flex; justify-content: space-between; margin-bottom: 15px; align-items: center;'>
+    <h1>Bagmons</h1>
+    <%= link_to 'New Bagmon', new_bagmon_path, class:"btn btn-success"%>
+  </div>
+  <div style='display: flex; flex-wrap: wrap; width: 100%; gap: 1rem; justify-content: space-between;'>
+    <% @bagmons.each do |bagmon| %>
+      <a style='text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
+        <div style=' color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;'>
+          <h2><%= bagmon.name %></h2>
+          <div style='width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;'>
+            <%= image_tag bagmon.image, size: "250x250" %>
+          </div>
         </div>
-      </div>
-    </a>
-  <% end %>
-</div>
+      </a>
+    <% end %>
+  </div>
+  </div>
 
 <br>
 
-<%= link_to 'New Bagmon', new_bagmon_path %>
+

@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bagdex - Initial Page</title>
+    <title>Bagdex</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= current_user ? current_user.email : "" %>
-    <p>
-    <%= current_admin ? current_admin.email : "" %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= link_to "Logoff User ->", destroy_user_session_path, method: :delete %>
-    <p>
-    <%= link_to "Logoff Admin ->", destroy_admin_session_path, method: :delete %>
+
+    <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/welcome/index"><img src="../logo_bagdex.png" style="width:50px;height:50px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="btn btn-primary" aria-current="page" href="/welcome/index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="/bagmons/">Bagmons</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <button class="btn btn-danger" type="submit">
+            <a class="nav-link" <%= link_to "Logoff", destroy_user_session_path, method: :delete %></a>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
   </head>
 
   <body>
-    <p> Usuário logado </p>
     <%= yield %>
   </body>
 </html>

@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :number %>
-    <%= form.number_field :number %>
+    <%= form.number_field :number, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.text_field :image, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :type_id %>
-    <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false}) %>
+    <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false, class: "form-control"}) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
