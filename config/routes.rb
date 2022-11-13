@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
   devise_for :admins
   resources :types
+  resources :battle
   resources :bagmons
   devise_for :users
   root to: 'welcome#index'
