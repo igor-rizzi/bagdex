@@ -1,5 +1,12 @@
+<%= stylesheet_link_tag "type.css" %>
+
+<div class="centered">
+<br>
 <h1>New Type</h1>
+
+<hr>
 
 <%= render 'form', type: @type %>
 
-<%= link_to 'Back', types_path %>
+<%= link_to 'Back', types_path, class:"btn btn-outline-danger" %>
+</div>

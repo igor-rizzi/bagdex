@@ -1,37 +1,45 @@
-<%= form_with(model: bagmon, local: true) do |form| %>
-  <% if bagmon.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(bagmon.errors.count, "error") %> prohibited this bagmon from being saved:</h2>
+<head>
+<%= stylesheet_link_tag "type.css" %>
+</head>
 
-      <ul>
-      <% bagmon.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<body>
+    <%= form_with(model: bagmon, local: true) do |form| %>
+      <% if bagmon.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(bagmon.errors.count, "error") %> prohibited this bagmon from being saved:</h2>
+
+          <ul>
+          <% bagmon.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="form-group">
-    <%= form.label :number %>
-    <%= form.number_field :number, class: "form-control" %>
-  </div>
+      <div class="group-labels">
+        <div class="form-group" style="width: 100%">
+          <%= form.label :number %>
+          <%= form.number_field :number, class: "form-control", style: "width: 90%" %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
+        <div class="form-group" style="width: 100%">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "form-control", style: "width: 100%" %>
+        </div>
+      </div>
 
-  <div class="form-group">
-    <%= form.label :image %>
-    <%= form.text_field :image, class: "form-control" %>
-  </div>
+      <div class="form-group">
+        <%= form.label :image %>
+        <%= form.text_field :image, class: "form-control" %>
+      </div>
 
-  <div class="form-group">
-    <%= form.label :type_id %>
-    <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false, class: "form-control"}) %>
-  </div>
+      <div class="form-group">
+        <%= form.label :type_id %>
+        <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false, class: "form-control"}) %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit class: "btn btn-primary" %>
-  </div>
-<% end %>
+      <div class="actions">
+        <%= form.submit class: "btn btn-primary" %>
+      </div>
+    <% end %>
+</body>

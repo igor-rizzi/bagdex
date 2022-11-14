@@ -1,5 +1,13 @@
-<h1>New Bagmon</h1>
+<%=stylesheet_link_tag "bagmon.css"%>
 
-<%= render 'form', bagmon: @bagmon %>
+<body>
+    <div class="centered">
+        <br>
+        <h1>New Bagmon</h1>
+        <hr>
 
-<%= link_to 'Back', bagmons_path %>
+        <%= render 'form', bagmon: @bagmon %>
+
+        <%= link_to 'Back', bagmons_path, class:"btn btn-outline-danger" %>
+    </div>
+</body>

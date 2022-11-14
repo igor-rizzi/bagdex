@@ -1,7 +1,6 @@
 <%= stylesheet_link_tag "cadastro.css" %>
 <head>
     <title>Bagdex</title>
-
 </head>
 
 <body>
@@ -9,9 +8,11 @@
         <div class="content-box">
             <div class="form-box">
                 <h2>Bem Vindo a BAGDEX</h2>
-                <div class="button-box">
-                    <a class="btn btn-success" href="/users/sign_in" role="button">Entrar</a>
-                </div>
+                <% if !user_signed_in? %>
+                    <div class="button-box">
+                        <a class="btn btn-success" href="/users/sign_in" role="button">Entrar</a>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
