@@ -8,10 +8,10 @@
   </div>
   <div style='display: flex; flex-wrap: wrap; width: 100%; gap: 1rem; justify-content: space-between;'>
     <% @bagmons.each do |bagmon| %>
-      <a style='text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
-        <div style=' color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;'>
+      <a style='border-radius: 20px; text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
+        <div style='border-radius: 20px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;'>
           <h2><%= bagmon.name %></h2>
-          <div style='width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;'>
+          <div style='border-radius: 20px; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;'>
             <%= image_tag bagmon.image, size: "250x250" %>
           </div>
         </div>
