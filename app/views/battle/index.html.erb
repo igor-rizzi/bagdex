@@ -11,7 +11,7 @@
         <div class="d-flex flex-row gap-3">
             <div class="form-group w-50">
                 <label for="bagmon1">Bagmon 1</label>
-                <select required id="bagmon1" name="bagmon1" class="form-control">
+                <select required id="bagmon1" name="bagmon1" class="form-select">
                     <option selected disabled>Selecione...</option>
                     <% @bagmons.each do |bagmon| %>
                         <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
@@ -20,7 +20,7 @@
             </div>
             <div class="form-group w-50">
                 <label for="bagmon2">Bagmon 2</label>
-                <select required id="bagmon2" name="bagmon2" class="form-control">
+                <select required id="bagmon2" name="bagmon2" class="form-select">
                     <option selected disabled>Selecione...</option>
                     <% @bagmons.each do |bagmon| %>
                         <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
@@ -28,6 +28,6 @@
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Battle</button>
+        <button type="submit" class="btn btn-primary">LUTAR</button>
     </form>
 <% end %>

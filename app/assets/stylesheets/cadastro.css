@@ -91,6 +91,19 @@
     border-radius: 5px;
 }
 
+.content-box .form-box .input-box-email input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    font-weight: 400;
+    border: none;
+    font-size: 17px;
+    color: #32324f;
+    background-color: #c9c9c9;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
 .content-box .form-box .input-box span {
     font-size: 16px;
     margin-bottom: 5px;

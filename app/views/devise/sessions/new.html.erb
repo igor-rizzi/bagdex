@@ -1,11 +1,8 @@
-<%= stylesheet_link_tag "login.css" %>
+<%= stylesheet_link_tag "page_login.css" %>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <body>
-    <div class="container-login">
-        <div class="img-box">
-            <img src="https://bagdex.com.br/wp-content/uploads/2022/09/img_jogo-932x1024.png">
-        </div>
+    <div class="container-all">
         <div class="content-box">
             <div class="form-box">
                 <h2>Login</h2>
@@ -27,6 +24,9 @@
                             <span>Lembrar informações</span>
                           </label>
                         <% end %>
+                    </div>
+
+                    <div class="forgot-password">
                         <a href="/users/password/new">Esqueceu a senha?</a>
                     </div>
 
@@ -44,6 +44,7 @@
                 </form>
             </div>
         </div>
+       
     </div>
 </body>
 
