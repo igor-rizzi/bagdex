@@ -5,14 +5,37 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container-login {
+.container-cad {
     background-image: url(https://bagdex.com.br/wp-content/uploads/2022/09/fundo_site_01.png);
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+}
+
+.box-text {
+    background-color: white;
+    width: 25%;
+    height: 50%;
+    border-radius: 20px;
+    margin-left: 250px;
+    display: grid;
+}
+
+.box-text h2{
+    padding-top: 20px;
+    color: #32324f;
+    font-weight: 600;
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.box-text p{
+    text-align: center;
 }
 
 .img-box {
@@ -37,6 +60,9 @@
 
 .content-box .form-box {
     width: 50%;
+    border-style: solid;
+    border:#000000;
+    border-radius: 20px;
 }
 
 .content-box .form-box .ul {

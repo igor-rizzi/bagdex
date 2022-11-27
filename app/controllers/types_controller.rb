@@ -25,7 +25,7 @@ class TypesController < UsersBackofficeController
 
     respond_to do |format|
       if @type.save
-        format.html { redirect_to type_url(@type), notice: "Type was successfully created." }
+        format.html { redirect_to type_url(@type), notice: "Type was successfully created."}
         format.json { render :show, status: :created, location: @type }
       else
         format.html { render :new, status: :unprocessable_entity }

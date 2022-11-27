@@ -6,7 +6,7 @@
         <% end %>
     </div>
 <% else %>
-    <h1 class="text-center mb-3">Escolha 2 oponentes</h1>
+    <h1 class="text-center">Selecione dois Bagmons para batalhar</h1>
     <form action="/battle" class="container d-flex flex-column gap-3 w-50">
         <div class="d-flex flex-row gap-3">
             <div class="form-group w-50">
@@ -30,4 +30,7 @@
         </div>
         <button type="submit" class="btn btn-primary">LUTAR</button>
     </form>
+    <div class="container d-flex justify-content-center" style="margin-top: 10px">
+        <%= link_to 'Voltar', root_path, class: 'btn btn-primary'%>
+    </div>
 <% end %>

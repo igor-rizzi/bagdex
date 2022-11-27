@@ -18,12 +18,12 @@ class BattleController < UsersBackofficeController
           if (bagmonInAttack == @bagmon1)
             attackValue = rand(5..10)
             lifeBagmon2 -= attackValue
-            @rounds << @bagmon1.name + " atacou " + @bagmon2.name + " e tirou " + attackValue.to_s + " pontos de vida. " + @bagmon2.name + " agora tem " + lifeBagmon2.to_s + " pontos de vida."
+            @rounds << @bagmon1.name + " golpeou " + @bagmon2.name + " e deu um dano de " + attackValue.to_s + ". E agora " + @bagmon2.name + " tem " + lifeBagmon2.to_s + " pontos de vida."
             bagmonInAttack = @bagmon2
           else
             attackValue = rand(5..10)
             lifeBagmon1 -= attackValue
-            @rounds << @bagmon2.name + " atacou " + @bagmon1.name + " e tirou " + attackValue.to_s + " pontos de vida. " + @bagmon1.name + " agora tem " + lifeBagmon1.to_s + " pontos de vida."
+            @rounds << @bagmon2.name + " golpeou " + @bagmon1.name + " e deu um dano de " + attackValue.to_s + ". E agora " + @bagmon1.name + " tem " + lifeBagmon1.to_s + " pontos de vida."
             bagmonInAttack = @bagmon1
           end
         end
