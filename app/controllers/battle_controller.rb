@@ -8,27 +8,27 @@ class BattleController < UsersBackofficeController
   
         @rounds = []
   
-        lifeBagmon1 = 100
-        lifeBagmon2 = 100
+        vidaBagmon1 = 100
+        vidaBagmon2 = 100
   
         bagmonInAttack = rand(1..2) == 1 ? @bagmon1 : @bagmon2
   
         while (lifeBagmon1 > 0 && lifeBagmon2 > 0) do
   
-          if (bagmonInAttack == @bagmon1)
+          if (bagmonAtacando == @bagmon1)
             attackValue = rand(5..10)
-            lifeBagmon2 -= attackValue
-            @rounds << @bagmon1.name + " golpeou " + @bagmon2.name + " e deu um dano de " + attackValue.to_s + ". E agora " + @bagmon2.name + " tem " + lifeBagmon2.to_s + " pontos de vida."
-            bagmonInAttack = @bagmon2
+            vidaBagmon2 -= valorAtaque
+            @rounds << @bagmon1.name + " golpeou " + @bagmon2.name + " e deu um dano de " + valorAtaque.to_s + ". E agora " + @bagmon2.name + " tem " + vidaBagmon2.to_s + " pontos de vida."
+            bagmonAtacando = @bagmon2
           else
             attackValue = rand(5..10)
-            lifeBagmon1 -= attackValue
-            @rounds << @bagmon2.name + " golpeou " + @bagmon1.name + " e deu um dano de " + attackValue.to_s + ". E agora " + @bagmon1.name + " tem " + lifeBagmon1.to_s + " pontos de vida."
-            bagmonInAttack = @bagmon1
+            vidaBagmon1 -= valorAtaque
+            @rounds << @bagmon2.name + " golpeou " + @bagmon1.name + " e deu um dano de " + valorAtaque.to_s + ". E agora " + @bagmon1.name + " tem " + vidaBagmon1.to_s + " pontos de vida."
+            bagmonAtacando = @bagmon1
           end
         end
 
-        if (lifeBagmon1 > 0)
+        if (vidaBagmon1 > 0)
           @rounds << @bagmon1.name + " venceu!"
         else
           @rounds << @bagmon2.name + " venceu!"
